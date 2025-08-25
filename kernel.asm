@@ -1,5 +1,10 @@
 [bits 32]
-org 0x70000
+;org 0x70000
+;nasm -f elf32 -o kernel.o kernel.asm
+;x86_64-linux-gnu-ld -m elf_i386 -nostdlib -T link.ld kernel.o -o kernel.oo
+;x86_64-linux-gnu-objcopy kernel.oo kernel.bin -O binary
+extern kinit
+kinit:
 mov eax,0
 mov ds,ax
 mov es,ax
