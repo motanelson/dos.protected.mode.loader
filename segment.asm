@@ -1,8 +1,6 @@
 [bits 32]
 ;org 0x70000
-;nasm -f elf32 -o segment.o segment.asm
-;x86_64-linux-gnu-ld -m elf_i386 -nostdlib -T link.ld segment.o -o kernel.oo
-;x86_64-linux-gnu-objcopy kernel.oo kernel.bin -O binary
+
 global kinit
 kinit:
 mov eax,0
@@ -22,3 +20,5 @@ loop1:
 
 loop2:
     jmp loop2
+
+section .note.GNU-stack

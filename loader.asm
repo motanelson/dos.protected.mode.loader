@@ -1,5 +1,5 @@
 bits 16
-;nasm -f bin -o loader32.com loader.asm
+
 org 0x100
 init:
 jmp loads
@@ -80,7 +80,7 @@ table2:
 
     jmp 0:0x7c00
 files:
-incbin "pe.bin"
+incbin "/tmp/pe.bin"
 
 mov ds,ax
 mov eax,0

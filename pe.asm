@@ -1,6 +1,5 @@
 bits 16
 org 0x7c00
-;nasm -f bin -o pe.bin pe.asm 
 init: 
 
 jmp kernel
@@ -57,10 +56,11 @@ nop
 
 b32:
     mov ax, DATA_SEG
-    mov ds, ax
-    mov es, ax
     mov fs, ax
     mov gs, ax
+    ;mov ax, 0
+    mov ds, ax
+    mov es, ax
     mov ss, ax
 
     mov ebp, 0x9FF00
